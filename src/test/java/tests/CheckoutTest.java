@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-
 public class CheckoutTest extends BaseTest {
 
     @Test
@@ -14,10 +13,11 @@ public class CheckoutTest extends BaseTest {
 
         productsPage.clickShoppingCart();
         cartPage.clickCheckoutButton();
+
         assertEquals(checkoutPage.getTitle(),
                 "Checkout: Your Information",
                 "Страница не открылась");
-        checkoutPage.fillPersonalInfo("Tahmina", "Yuldasheva", "04368");
+        checkoutPage.fillPersonalInfo("Tahmina", "Yuldasheva", "043678");
     }
 
     @Test

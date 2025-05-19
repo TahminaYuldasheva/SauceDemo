@@ -6,7 +6,9 @@ import static org.testng.Assert.assertEquals;
 
 public class LoginTest1 extends BaseTest {
 
-    @Test
+    @Test(testName = "Негативный тест логина",
+            description = "Проверка логина в систему с пустым полем пароль",
+    priority = 1)
     public void checkLoginWithEmptyPassword() {
         loginPage.open();
         loginPage.login("standard_user", "");
@@ -15,7 +17,7 @@ public class LoginTest1 extends BaseTest {
                 "Сообщение об ошибке не появилось!");
     }
 
-    @Test
+    @Test(priority = 2)
     public void checkLoginWithWrongPassword() {
 
         loginPage.open();
@@ -25,7 +27,17 @@ public class LoginTest1 extends BaseTest {
                 "Сообщение об ошибке не появилось!");
     }
 
-    @Test
+
+    @Test(priority = 3)
+    public void checkLoginWithPositiveCred() {
+        loginPage.open();
+        loginPage.login("standard_user", "secret_sauce");
+        assertEquals(productsPage.getTitle(),
+                "Products",
+                "Логин не выполнен!");
+    }
+
+    @Test(priority = 4)
     public void checkLoginWithEmptyUserName() {
 
         loginPage.open();
@@ -33,15 +45,6 @@ public class LoginTest1 extends BaseTest {
         assertEquals(loginPage.getErrorMessage(),
                 "Epic sadface: Username is required",
                 "Сообщение об ошибке не появилось!");
-    }
-
-    @Test
-    public void checkLoginWithPositiveCred() {
-        loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
-        assertEquals(productsPage.getTitle(),
-                "Products",
-                "Логин не выполнен!");
     }
 
 }
