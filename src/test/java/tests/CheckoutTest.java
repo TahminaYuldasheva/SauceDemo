@@ -1,14 +1,16 @@
 package tests;
 
 import io.qameta.allure.*;
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-
 public class CheckoutTest extends BaseTest {
 
-    @Test
+    @Description("Проверка регистрации с валидными данными на странице Checkout: Your Information")
+    @Test(testName = "Позитивный тест страницы Checkout: Your Information",
+            description = "Проверка регистрации с валидными данными на странице Checkout: Your Information")
     public void isPersonalInfoValid() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -18,12 +20,14 @@ public class CheckoutTest extends BaseTest {
         assertEquals(checkoutPage.getTitle(),
                 "Checkout: Your Information",
                 "Страница не открылась");
-        checkoutPage.fillPersonalInfo("Tahmina", "Yuldasheva", "04368");
+        checkoutPage.fillPersonalInfo("Tahmina", "Yuldasheva", "043678");
+        assertEquals(checkoutPage.getTitle(),
+                "Checkout: Overview",
+                "Переход на страницу не выполнен!");
     }
 @Epic("Заполнение информации о покупателе")
 @Feature("Форма покупателя")
 @Story("Ввод пустого имени в форме")
-@Description("Проверка регистрации покупателя с пустым полем для имени")
 @Severity(SeverityLevel.MINOR)
 @Owner("Tahachka")
 @TmsLink("SD-01")
@@ -31,7 +35,9 @@ public class CheckoutTest extends BaseTest {
 @Link(name = "Документация", url = "https://github.com/borodicht/AllureReportingGoogle")
 @Flaky
 
-    @Test (testName = "Негативный тест формы покупателя")
+    @Description("Проверка регистрации на странице Checkout: Your Information с пустым полем First Name")
+    @Test(testName = "Негативный тест страницы Checkout: Your Information",
+            description = "Проверка регистрации на странице Checkout: Your Information с пустым полем First Name")
     public void checkEmptyFirstNameField() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -47,7 +53,9 @@ public class CheckoutTest extends BaseTest {
                 "Сообщение об ошибке не появилось!");
     }
 
-    @Test
+    @Description("Проверка регистрации на странице Checkout: Your Information с пустым полем Last Name")
+    @Test(testName = "Негативный тест страницы Checkout: Your Information",
+            description = "Проверка регистрации на странице Checkout: Your Information с пустым полем Last Name")
     public void checkEmptyLastNameField() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -63,7 +71,9 @@ public class CheckoutTest extends BaseTest {
                 "Сообщение об ошибке не появилось!");
     }
 
-    @Test
+    @Description("Проверка регистрации на странице Checkout: Your Information с пустым полем Postal Code")
+    @Test(testName = "Негативный тест страницы Checkout: Your Information",
+            description = "Проверка регистрации на странице Checkout: Your Information с пустым полем Postal Code")
     public void checkEmptyPostalCodeField() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
