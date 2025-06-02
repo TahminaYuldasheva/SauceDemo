@@ -19,7 +19,8 @@ public class CartPage extends BasePage {
     public String getTitle() {
         return driver.findElement(TITLE).getText();
     }
-@Step("нажатие на кнопку Checkout")
+
+    @Step("Нажатие на кнопку Checkout")
     public void clickCheckoutButton() {
         driver.findElement(CHECKOUT_ID).click();
     }
@@ -28,6 +29,7 @@ public class CartPage extends BasePage {
         return driver.findElement(CART_ITEM).isDisplayed();
     }
 
+    @Step("Нажатие на кнопку Continue Shopping")
     public void clickContinueShoppingButton() {
         driver.findElement(CONTINUE_SHOPPING).click();
     }

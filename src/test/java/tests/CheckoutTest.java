@@ -25,16 +25,16 @@ public class CheckoutTest extends BaseTest {
                 "Checkout: Overview",
                 "Переход на страницу не выполнен!");
     }
-@Epic("Заполнение информации о покупателе")
-@Feature("Форма покупателя")
-@Story("Ввод пустого имени в форме")
-@Severity(SeverityLevel.MINOR)
-@Owner("Tahachka")
-@TmsLink("SD-01")
-@Issue("SD-BUG-01")
-@Link(name = "Документация", url = "https://github.com/borodicht/AllureReportingGoogle")
-@Flaky
 
+    @Epic("Заполнение информации о покупателе")
+    @Feature("Форма покупателя")
+    @Story("Ввод пустого имени в форме")
+    @Severity(SeverityLevel.MINOR)
+    @Owner("Tahmina Yuldasheva")
+    @TmsLink("SD-01")
+    @Issue("SD-BUG-01")
+    @Link(name = "Документация", url = "https://github.com/TahminaYuldasheva/SauceDemo")
+    @Flaky
     @Description("Проверка регистрации на странице Checkout: Your Information с пустым полем First Name")
     @Test(testName = "Негативный тест страницы Checkout: Your Information",
             description = "Проверка регистрации на странице Checkout: Your Information с пустым полем First Name")

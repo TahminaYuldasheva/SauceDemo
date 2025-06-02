@@ -29,6 +29,7 @@ public class ProductsPage extends BasePage {
         return driver.findElement(REMOVE_BUTTON).getText();
     }
 
+    @Step("Переход на страницу корзины")
     public void clickShoppingCart() {
         driver.findElement(SHOPPING_CART).click();
     }

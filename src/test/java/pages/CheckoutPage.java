@@ -4,7 +4,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import tests.AllureUtils;
 
 public class CheckoutPage extends BasePage {
     private static final By TITLE = By.xpath("//*[@data-test='title']");
@@ -24,7 +23,7 @@ public class CheckoutPage extends BasePage {
         return driver.findElement(TITLE).getText();
     }
 
-@Step("Заполнение формы покупателя именем: {firstName}, фамилией: {lastName}, и индексом: {postalCode}")
+    @Step("Заполнение формы покупателя именем: {firstName}, фамилией: {lastName} и индексом: {postalCode}")
     public void fillPersonalInfo(String firstName, String lastName, String postalCode) {
         driver.findElement(FIRST_NAME).sendKeys(firstName);
         driver.findElement(LAST_NAME).sendKeys(lastName);

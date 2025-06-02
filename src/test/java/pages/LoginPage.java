@@ -3,7 +3,6 @@ package pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import tests.AllureUtils;
 
 public class LoginPage extends BasePage {
 
@@ -19,7 +18,6 @@ public class LoginPage extends BasePage {
     @Step("Открытие страницы LoginPage")
     public void open() {
         driver.get("https://www.saucedemo.com/");
-        AllureUtils.takeScreenshot(driver);
     }
 
     @Step("Вход в систему с именем пользователя: {user} и паролем: {password}")

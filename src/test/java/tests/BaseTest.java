@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.CartPage;
 import pages.CheckoutPage;
@@ -48,10 +49,14 @@ public class BaseTest {
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);
 
+
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown() {
+    public void tearDown(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            AllureUtils.takeScreenshot(driver);
+        }
         driver.quit();
     }
 }
