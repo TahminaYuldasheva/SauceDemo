@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import jdk.jfr.Description;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,6 @@ public class CheckoutTest extends BaseTest {
 
         productsPage.clickShoppingCart();
         cartPage.clickCheckoutButton();
-
         assertEquals(checkoutPage.getTitle(),
                 "Checkout: Your Information",
                 "Страница не открылась");
@@ -26,6 +26,15 @@ public class CheckoutTest extends BaseTest {
                 "Переход на страницу не выполнен!");
     }
 
+    @Epic("Заполнение информации о покупателе")
+    @Feature("Форма покупателя")
+    @Story("Ввод пустого имени в форме")
+    @Severity(SeverityLevel.MINOR)
+    @Owner("Tahmina Yuldasheva")
+    @TmsLink("SD-01")
+    @Issue("SD-BUG-01")
+    @Link(name = "Документация", url = "https://github.com/TahminaYuldasheva/SauceDemo")
+    @Flaky
     @Description("Проверка регистрации на странице Checkout: Your Information с пустым полем First Name")
     @Test(testName = "Негативный тест страницы Checkout: Your Information",
             description = "Проверка регистрации на странице Checkout: Your Information с пустым полем First Name")
