@@ -24,6 +24,7 @@ public class BaseTest {
     CartPage cartPage;
     CheckoutPage checkoutPage;
 
+
     @Parameters({"browser"})
     @BeforeMethod
     public void setUp(@Optional("chrome") String browser) {
@@ -61,7 +62,7 @@ public class BaseTest {
         if (ITestResult.FAILURE == result.getStatus()) {
             AllureUtils.takeScreenshot(driver);
         }
-        if(driver!=null) {
+        if (driver != null) {
             driver.quit();
         }
     }

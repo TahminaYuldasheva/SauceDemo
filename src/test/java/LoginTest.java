@@ -10,12 +10,12 @@ import java.time.Duration;
 public class LoginTest {
     WebDriver driver;
 
-    @BeforeMethod
+   /* @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    }
+    }*/
 
     @Test
     public void test() {
@@ -54,11 +54,12 @@ public class LoginTest {
         driver.findElements(By.cssSelector("[class^=inventory]"));
         driver.findElements(By.cssSelector("[id$=-desc]"));
         driver.findElements(By.cssSelector("[class*=item]"));
+        driver.quit();
 
     }
 
-    @AfterMethod(alwaysRun = true)
+   /* @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }
