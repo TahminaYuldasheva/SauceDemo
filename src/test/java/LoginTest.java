@@ -13,16 +13,16 @@ public class LoginTest {
     public void test() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
+        driver.findElement(By.id("user-name")).sendKeys("problem_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+        driver.findElement(By.partialLinkText("Labs Backpack"));
+        driver.findElement(By.linkText("Logout"));
+
         driver.findElement(By.id("user-name"));
         driver.findElement(By.name("password"));
         driver.findElement(By.className("login_logo"));
         driver.findElement(By.tagName("div"));
-
-        driver.findElement(By.id("user-name")).sendKeys("problem_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
-        driver.findElement(By.partialLinkText("Labs Backpack")).click();
-        driver.findElement(By.linkText("Logout"));
 
         driver.findElement(By.xpath("//button[@name='add-to-cart']"));
         driver.findElement(By.xpath("//div[text()='Sauce Labs Fleece Jacket']"));
@@ -30,7 +30,7 @@ public class LoginTest {
         driver.findElement(By.xpath("//a[contains(text(),'Reset')]"));
         driver.findElement(By.xpath("//*[@class='header_label']//descendant::div[@class='app_logo']"));
         driver.findElement(By.xpath("//*[@target='_blank']/ancestor::ul[@class='social']"));
-        driver.findElement(By.xpath("//*[@name='back-to-products']")).click();
+        driver.findElement(By.xpath("//*[@name='back-to-products']"));
         driver.findElement(By.xpath("//*[@class='inventory_list']" +
                 "//following::div[@class='inventory_item']"));
         driver.findElement(By.xpath("//*[@class='inventory_item_price']/parent::div[@class='pricebar']"));
@@ -48,6 +48,5 @@ public class LoginTest {
         driver.findElements(By.cssSelector("[id$=-desc]"));
         driver.findElements(By.cssSelector("[class*=item]"));
         driver.quit();
-
     }
 }
