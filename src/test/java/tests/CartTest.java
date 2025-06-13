@@ -19,7 +19,7 @@ public class CartTest extends BaseTest {
             description = "Проверка наличия товара в корзине после добавления")
     public void checkCartIsNotEmpty() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         productsPage.clickAddToCartButton();
         productsPage.clickShoppingCart();
         assertEquals(cartPage.getTitle(),
@@ -38,7 +38,7 @@ public class CartTest extends BaseTest {
             description = "Проверка перехода со страницы Your Cart на страницу Checkout: Your Information")
     public void checkCheckoutButton() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         productsPage.clickAddToCartButton();
         productsPage.clickShoppingCart();
         assertEquals(cartPage.getTitle(),
@@ -58,7 +58,7 @@ public class CartTest extends BaseTest {
                     "Continue Shopping")
     public void checkContinueShoppingButton() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         productsPage.clickAddToCartButton();
         productsPage.clickShoppingCart();
 

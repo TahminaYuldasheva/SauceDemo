@@ -12,7 +12,7 @@ public class LoginTest1 extends BaseTest {
             description = "Проверка логина с пустым полем Password")
     public void checkLoginWithEmptyPassword() {
         loginPage.open();
-        loginPage.login("standard_user", "");
+        loginPage.login(user, "");
         assertEquals(loginPage.getErrorMessage(),
                 "Epic sadface: Password is required",
                 "Сообщение об ошибке не появилось!");
@@ -23,7 +23,7 @@ public class LoginTest1 extends BaseTest {
             description = "Проверка логина с неправильным паролем")
     public void checkLoginWithWrongPassword() {
         loginPage.open();
-        loginPage.login("standard_user", "1234567");
+        loginPage.login(user, "1234567");
         assertEquals(loginPage.getErrorMessage(),
                 "Epic sadface: Username and password do not match any user in this service",
                 "Сообщение об ошибке не появилось!");
@@ -34,7 +34,7 @@ public class LoginTest1 extends BaseTest {
             description = "Проверка логина с валидными данными")
     public void checkLoginWithPositiveCred() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         assertEquals(productsPage.getTitle(),
                 "Products",
                 "Логин не выполнен!");
@@ -45,7 +45,7 @@ public class LoginTest1 extends BaseTest {
             description = "Проверка логина с пустым полем Username")
     public void checkLoginWithEmptyUserName() {
         loginPage.open();
-        loginPage.login("", "secret_sauce");
+        loginPage.login("", password);
         assertEquals(loginPage.getErrorMessage(),
                 "Epic sadface: Username is required",
                 "Сообщение об ошибке не появилось!");

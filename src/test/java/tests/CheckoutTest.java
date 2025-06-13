@@ -13,7 +13,7 @@ public class CheckoutTest extends BaseTest {
             description = "Проверка регистрации с валидными данными на странице Checkout: Your Information")
     public void isPersonalInfoValid() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
 
         productsPage.clickShoppingCart();
         cartPage.clickCheckoutButton();
@@ -40,7 +40,7 @@ public class CheckoutTest extends BaseTest {
             description = "Проверка регистрации на странице Checkout: Your Information с пустым полем First Name")
     public void checkEmptyFirstNameField() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
 
         productsPage.clickShoppingCart();
         cartPage.clickCheckoutButton();
@@ -58,7 +58,7 @@ public class CheckoutTest extends BaseTest {
             description = "Проверка регистрации на странице Checkout: Your Information с пустым полем Last Name")
     public void checkEmptyLastNameField() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
 
         productsPage.clickShoppingCart();
         cartPage.clickCheckoutButton();
@@ -76,7 +76,7 @@ public class CheckoutTest extends BaseTest {
             description = "Проверка регистрации на странице Checkout: Your Information с пустым полем Postal Code")
     public void checkEmptyPostalCodeField() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
 
         productsPage.clickShoppingCart();
         cartPage.clickCheckoutButton();

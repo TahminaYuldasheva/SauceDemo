@@ -24,6 +24,8 @@ public class BaseTest {
     CartPage cartPage;
     CheckoutPage checkoutPage;
 
+    String user = System.getProperty("user");
+    String password = System.getProperty("password");
 
     @Parameters({"browser"})
     @BeforeMethod
@@ -54,7 +56,8 @@ public class BaseTest {
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);
 
-
+        System.out.println(user);
+        System.out.println(password);
     }
 
     @AfterMethod(alwaysRun = true)

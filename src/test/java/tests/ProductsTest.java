@@ -18,7 +18,7 @@ public class ProductsTest extends BaseTest {
             description = "Проверка перехода на страницу товаров и корректной работы кнопки Add to cart")
     public void checkAddToCart() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
 
         assertEquals(productsPage.getTitle(),
                 "Products",
@@ -41,7 +41,7 @@ public class ProductsTest extends BaseTest {
             description = "Проверка перехода со страницы Products на страницу Your Cart")
     public void checkShoppingCart() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         assertEquals(productsPage.getTitle(),
                 "Products",
                 "Переход на страницу не выполнен!");
