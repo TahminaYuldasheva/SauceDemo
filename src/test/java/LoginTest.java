@@ -8,17 +8,10 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class LoginTest {
-    WebDriver driver;
-
-   /* @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    }*/
 
     @Test
     public void test() {
+        WebDriver driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name"));
         driver.findElement(By.name("password"));
@@ -57,9 +50,4 @@ public class LoginTest {
         driver.quit();
 
     }
-
-   /* @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        driver.quit();
-    }*/
 }
