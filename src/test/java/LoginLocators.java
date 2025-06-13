@@ -1,19 +1,19 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
-public class LoginTest {
+public class LoginLocators {
 
     @Test
     public void test() {
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("problem_user");
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
         driver.findElement(By.partialLinkText("Labs Backpack"));
