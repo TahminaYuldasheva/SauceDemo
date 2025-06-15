@@ -1,0 +1,1 @@
+{"total":6,"items":[{"uid":"997c1905fa0d0e25d5d34160d4fba29b","name":"Оформление заказа","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}},{"uid":"7bd28efba25b3cc46b7f4e972d7d9333","name":"Заполнение информации о покупателе","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
